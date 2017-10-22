@@ -7,3 +7,18 @@ function get_item_html($id,$item) {
         . "</a></li>";
     return $output;
 }
+
+function array_category($catalog,$category) {
+    if ($category == Null) {
+        return array_keys($catalog);
+    }
+    $output = array();
+
+    foreach ($catalog as $id => $item) {
+        if (strtolower($category) == strtolower($item["category"])) {
+            $output[] = $id;
+        }
+    }
+
+    return $output;
+}
