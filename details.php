@@ -22,11 +22,23 @@ $section = Null;
 include("inc/header.php"); ?>
 
 <div class="section page">
+
     <div class="wrapper">
+
+        <div class="breadcrumbs">
+            <a href="catalog.php">Full Catalog</a>
+            &gt; <a href="catalog.php?cat=<?php echo strtolower($item["category"]); ?>">
+                <?php echo $item["category"]; ?></a>
+            &gt; <?php echo $item["title"]; ?>
+
+        </div>
+
         <div class="media-picture">
+
             <span>
                 <img src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>" />
             </span>
+
         </div>
 
         <div class="media-details">
@@ -79,7 +91,7 @@ include("inc/header.php"); ?>
                 <?php } else if (strtolower($item["category"]) == "music") { ?>
                     <tr>
                         <th>Artists</th>
-                        <td><?php echo $item["artists"]; ?></td>
+                        <td><?php echo $item["artist"]; ?></td>
                     </tr>
                 <?php } ?>
             </table>
