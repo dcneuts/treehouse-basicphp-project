@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8db17a3-7653-454b-8d17-6802cfc6fd82" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/process.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/process.php" afterPath="$PROJECT_DIR$/process.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suggest.php" afterPath="$PROJECT_DIR$/suggest.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -217,7 +216,7 @@
       <workItem from="1508529522511" duration="1424000" />
       <workItem from="1508536770527" duration="3412000" />
       <workItem from="1508628143831" duration="17469000" />
-      <workItem from="1508722619054" duration="5837000" />
+      <workItem from="1508722619054" duration="5880000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up initial project structure, adding includes folder and establishing project pathways">
       <created>1508542603954</created>
@@ -317,11 +316,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508741303041</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Moved process.php content to suggest.php for default action (self-contained, no external handler)">
+      <created>1508741430904</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1508741430904</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28142000" />
+    <option name="totallyTimeSpent" value="28185000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -376,7 +382,8 @@
     <MESSAGE value="Setting up process.php for email processing" />
     <MESSAGE value="Created basic handling for form submission data using POST method, working on disallowing duplicates and error messages due to handling in the browser." />
     <MESSAGE value="Setup successful test of sending email and receiving to the &quot;thanks&quot; page while process.php takes care of data handling." />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup successful test of sending email and receiving to the &quot;thanks&quot; page while process.php takes care of data handling." />
+    <MESSAGE value="Moved process.php content to suggest.php for default action (self-contained, no external handler)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved process.php content to suggest.php for default action (self-contained, no external handler)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
