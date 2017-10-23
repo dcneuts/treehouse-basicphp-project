@@ -9,7 +9,7 @@ include("inc/header.php"); ?>
         <h1>Suggest a Media Item</h1>
         <p>If you think there's something I&rsquo;m missing, let me know! Complete the form to send me an email.</p>
     </div>
-    <form method="post">
+    <form method="post" action="process.php">
         <table>
             <tr>
                 <th><label for="name">Name</label></th>
