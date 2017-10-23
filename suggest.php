@@ -1,4 +1,19 @@
 <?php
+$name = $_POST["name"];
+$email = $_POST["email"];
+$details = $_POST["details"];
+
+echo "<pre>";
+$email_body = "";
+$email_body .= "Name: " . $name . "\n";
+$email_body .= "Email: " . $email . "\n";
+$email_body .= "Details: " . $details . "\n";
+echo $email_body;
+echo "</pre>";
+
+// Todo: Send email
+header("location:thanks.php");
+
 $pageTitle = "Suggest a Media Item";
 $section = "suggest";
 
@@ -9,7 +24,7 @@ include("inc/header.php"); ?>
         <h1>Suggest a Media Item</h1>
         <p>If you think there's something I&rsquo;m missing, let me know! Complete the form to send me an email.</p>
     </div>
-    <form method="post" action="process.php">
+    <form method="post" action="suggest.php">
         <table>
             <tr>
                 <th><label for="name">Name</label></th>
