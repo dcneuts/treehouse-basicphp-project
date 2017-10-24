@@ -17,11 +17,11 @@
       <file leaf-file-name="suggest.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/suggest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+            <state relative-caret-position="506">
+              <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
               <folding>
                 <element signature="e#103#137#0#PHP" expanded="true" />
-                <marker date="1508831347703" expanded="true" signature="1957:1964" ph="’" />
+                <marker date="1508832022533" expanded="true" signature="2225:2232" ph="’" />
               </folding>
             </state>
           </provider>
@@ -217,7 +217,7 @@
       <workItem from="1508628143831" duration="17469000" />
       <workItem from="1508722619054" duration="9747000" />
       <workItem from="1508826327156" duration="3377000" />
-      <workItem from="1508831397626" duration="27000" />
+      <workItem from="1508831397626" duration="890000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up initial project structure, adding includes folder and establishing project pathways">
       <created>1508542603954</created>
@@ -366,11 +366,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508829186956</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Attempting to setup PHPMailer, classroom version is older and not current with needed configuration, reading over docs and setting up">
+      <created>1508831461450</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1508831461450</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35456000" />
+    <option name="totallyTimeSpent" value="36319000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -387,6 +394,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15138593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -397,7 +405,6 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -433,7 +440,8 @@
     <MESSAGE value="Included form validation as well as a basic honeypot for bots." />
     <MESSAGE value="Integrated PHPMailer script within the framework" />
     <MESSAGE value="Finished implementation of 3rd party library for email and will now configure, imported class for PHPStorm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished implementation of 3rd party library for email and will now configure, imported class for PHPStorm" />
+    <MESSAGE value="Attempting to setup PHPMailer, classroom version is older and not current with needed configuration, reading over docs and setting up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Attempting to setup PHPMailer, classroom version is older and not current with needed configuration, reading over docs and setting up" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -446,7 +454,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#103#137#0#PHP" expanded="true" />
-            <marker date="1508831347703" expanded="true" signature="1957:1964" ph="’" />
+            <marker date="1508832022533" expanded="true" signature="2225:2232" ph="’" />
           </folding>
         </state>
       </provider>
@@ -457,7 +465,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#103#137#0#PHP" expanded="true" />
-            <marker date="1508831347703" expanded="true" signature="1957:1964" ph="’" />
+            <marker date="1508832022533" expanded="true" signature="2225:2232" ph="’" />
           </folding>
         </state>
       </provider>
@@ -484,7 +492,7 @@
           <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
           <folding>
             <element signature="e#103#137#0#PHP" expanded="true" />
-            <marker date="1508831347703" expanded="true" signature="1957:1964" ph="’" />
+            <marker date="1508832022533" expanded="true" signature="2225:2232" ph="’" />
           </folding>
         </state>
       </provider>
@@ -539,7 +547,7 @@
           <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
           <folding>
             <element signature="e#103#137#0#PHP" expanded="true" />
-            <marker date="1508831347703" expanded="true" signature="1957:1964" ph="’" />
+            <marker date="1508832022533" expanded="true" signature="2225:2232" ph="’" />
           </folding>
         </state>
       </provider>
@@ -654,11 +662,11 @@
     <entry file="file://$PROJECT_DIR$/thanks.php" />
     <entry file="file://$PROJECT_DIR$/suggest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+        <state relative-caret-position="506">
+          <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
           <folding>
             <element signature="e#103#137#0#PHP" expanded="true" />
-            <marker date="1508831347703" expanded="true" signature="1957:1964" ph="’" />
+            <marker date="1508832022533" expanded="true" signature="2225:2232" ph="’" />
           </folding>
         </state>
       </provider>

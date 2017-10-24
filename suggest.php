@@ -22,31 +22,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // PHPMailer integration for sending mail
     include_once("inc/phpmailer/PHPMailer.php");
+    include_once("inc/phpmailer/Exception.php");
     $mail = new PHPMailer;
     if (!$mail->ValidateAddress($email)) {
         echo "Invalid Email Address";
         exit;
+    } else {
+
+        try {
+            $email_body = "";
+            $email_body .= "Name: " . $name . "\n";
+            $email_body .= "Email: " . $email . "\n";
+            $email_body .= "Details: " . $details . "\n";
+
+            $mail->setFrom($email, $name);
+            $mail->addAddress('dcneuts@gmail.com', 'Derek Neuts');     // Add a recipient
+
+            //Content
+            $mail->isHTML(false);                                  // Set email format to HTML
+            $mail->Subject = 'Personal Media Library Suggestion from ' . $name;
+            $mail->Body = $email_body;
+        } catch (Exception $e) {
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+            exit;
+        }
+
+// Send and check
+        if (!$mail->send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        } else {
+            echo "Message sent!";
+        }
     }
-
-    $email_body = "";
-    $email_body .= "Name: " . $name . "\n";
-    $email_body .= "Email: " . $email . "\n";
-    $email_body .= "Details: " . $details . "\n";
-
-    $mail->setFrom($email, $name);
-    $mail->addAddress('dcneuts@gmail.com', 'Derek Neuts');     // Add a recipient
-
-    //Content
-    $mail->isHTML(false);                                  // Set email format to HTML
-    $mail->Subject = 'Personal Media Library Suggestion from ' . $name;
-    $mail->Body    = $email_body;
-
-    if(!$mail->send()) {
-        echo 'Message could not be sent.';
-    } catch (Exception $e) {
-        echo 'Mailer Error: ' . $mail->ErrorInfo;
-        exit;
-}
 
     header("location:suggest.php?status=thanks");
 }
