@@ -2,6 +2,7 @@
 // Execute only when form values have been submitted
 // uses REQUEST METHOD to check POST status
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = trim(filter_input(INPUT_POST,"name",FILTER_SANITIZE_STRING));
@@ -27,15 +28,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    echo "<pre>";
     $email_body = "";
     $email_body .= "Name: " . $name . "\n";
     $email_body .= "Email: " . $email . "\n";
     $email_body .= "Details: " . $details . "\n";
-    echo $email_body;
-    echo "</pre>";
 
-// Todo: Send email
+    $mail->setFrom($email, $name);
+    $mail->addAddress('dcneuts@gmail.com', 'Derek Neuts');     // Add a recipient
+
+    //Content
+    $mail->isHTML(false);                                  // Set email format to HTML
+    $mail->Subject = 'Personal Media Library Suggestion from ' . $name;
+    $mail->Body    = $email_body;
+
+    if(!$mail->send()) {
+        echo 'Message could not be sent.';
+    } catch (Exception $e) {
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
+        exit;
+}
+
     header("location:suggest.php?status=thanks");
 }
 
