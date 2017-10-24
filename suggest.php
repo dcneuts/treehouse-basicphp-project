@@ -1,6 +1,8 @@
 <?php
 // Execute only when form values have been submitted
 // uses REQUEST METHOD to check POST status
+use PHPMailer\PHPMailer\PHPMailer;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = trim(filter_input(INPUT_POST,"name",FILTER_SANITIZE_STRING));
     $email = trim(filter_input(INPUT_POST,"email",FILTER_SANITIZE_EMAIL));
@@ -14,6 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // honeypot validation
     if ($_POST["address"] !="") {
         echo "Bad form input";
+        exit;
+    }
+
+// PHPMailer integration for sending mail
+    include_once("inc/phpmailer/PHPMailer.php");
+    $mail = new PHPMailer;
+    if (!$mail->ValidateAddress($email)) {
+        echo "Invalid Email Address";
         exit;
     }
 
