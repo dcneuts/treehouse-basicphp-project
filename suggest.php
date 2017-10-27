@@ -16,13 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // validation
     if ($name =="" || $email == "" || $category == "" || $title == "") {
-        echo "Please fill in the required fields: Name, Email, Category, and Title";
-        exit;
+        $error_message = "Please fill in the required fields: Name, Email, Category, and Title";
     }
+
 // honeypot validation
     if ($_POST["address"] !="") {
-        echo "Bad form input";
-        exit;
+        $error_message = "Bad form input";
     }
 
 // PHPMailer integration for sending mail
@@ -30,8 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include_once("inc/phpmailer/Exception.php");
     $mail = new PHPMailer;
     if (!$mail->ValidateAddress($email)) {
-        echo "Invalid Email Address";
-        exit;
+        $error_message = "Invalid Email Address";
     } else {
 
         try {
@@ -58,15 +56,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
 
-// Send and check
         if (!$mail->send()) {
-            echo "Mailer Error: " . $mail->ErrorInfo;
-        } else {
-            echo "Message sent!";
+            $error_message = "Message could not be sent.";
+            $error_message = "Mailer Error: " . $mail->ErrorInfo;
         }
+        header("location:suggest.php?status=thanks");
     }
-
-    header("location:suggest.php?status=thanks");
 }
 
 $pageTitle = "Suggest a Media Item";
