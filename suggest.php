@@ -20,15 +20,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 // honeypot validation
-    if ($_POST["address"] !="") {
+    if (!isset($error_message) && $_POST["address"] !="") {
         $error_message = "Bad form input";
     }
 
 // PHPMailer integration for sending mail
     include_once("inc/phpmailer/PHPMailer.php");
     include_once("inc/phpmailer/Exception.php");
+    include_once("inc/phpmailer/SMTP.php");
     $mail = new PHPMailer;
-    if (!$mail->ValidateAddress($email)) {
+    if (!isset($error_message) && !$mail->ValidateAddress($email)) {
         $error_message = "Invalid Email Address";
     } else {
 
@@ -43,12 +44,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $email_body .= "Genre: " . $genre . "\n";
             $email_body .= "Year: " . $year . "\n";
             $email_body .= "Details: " . $details . "\n";
-
+            $address = "youremail@yourdomain.com";
             $mail->setFrom($email, $name);
-            $mail->addAddress('dcneuts@gmail.com', 'Derek Neuts');     // Add a recipient
+            $mail->addAddress($address);     // Add a recipient
 
             //Content
             $mail->isHTML(false);                                  // Set email format to HTML
+            $mail->isSMTP();
+            $mail->Host = "smtp.gmail.com";
+            $mail->Port = 25;
+            $mail->Username = "yourname@yourdomain.com";
+            $mail->Password = "yourpassword";
             $mail->Subject = 'Personal Media Library Suggestion from ' . $name;
             $mail->Body = $email_body;
         } catch (Exception $e) {
