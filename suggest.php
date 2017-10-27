@@ -435,7 +435,8 @@ include("inc/header.php"); ?>
             </tr>
             <tr>
                 <th><label for="details">Suggest Item Details</label></th>
-                <td><textarea name="details" id="details"> value="<?php if (isset($details)) {echo $details;
+                <td><textarea name="details" id="details"> value="<?php if (isset($details)) {echo htmlspecialchars
+                        ($_POST["$details"]);
                 }?>"</textarea></td>
             </tr>
             <tr style="display:none"><!--Honeypot for Bots-->
