@@ -56,12 +56,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
 
-        if (!$mail->send()) {
+        if ($mail->send()) {
+            header("location:suggest.php?status=thanks");
+            exit;
+        }
             $error_message = "Message could not be sent.";
             $error_message = "Mailer Error: " . $mail->ErrorInfo;
         }
-        header("location:suggest.php?status=thanks");
-    }
 }
 
 $pageTitle = "Suggest a Media Item";
@@ -76,7 +77,13 @@ include("inc/header.php"); ?>
             echo "<p>Thanks for the email! I&rsquo;ll check out your suggestion shortly!</p>";
 } else { ?>
 
-        <p>If you think there's something I&rsquo;m missing, let me know! Complete the form to send me an email.</p>
+
+        <?php if (isset($error_message)) {
+            echo "<p class='message'>".$error_message . "</p>";
+            } else {
+                echo "<p>If you think there's something I&rsquo;m missing, let me know! Complete the form to send me an email.</p>";
+        }
+        ?>
     </div>
     <form method="post" action="suggest.php">
         <table>
